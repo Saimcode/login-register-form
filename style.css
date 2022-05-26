@@ -1,0 +1,258 @@
+/*================================== IMPORTING FONT ==================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+/*================================== BASIC PROPERTIES ==================================*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%); */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    transition: 0.5s;
+    animation: change 10s ease-in-out infinite;
+}
+
+@keyframes change {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+/*=============================== MAKING THE CONTAINER ===============================*/
+.containter{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+}
+
+/*=============================== SIGN IN AND SIGN UP? ===============================*/
+
+/* Making the background blue */
+.bluebg{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255,0.2);
+    box-shadow: 0 5px 45px rgb(0,0,0,0.15);
+    border-radius: 5px;
+}
+
+/* Making 2 columns for SIGN IN and SIGN UP */
+.bluebg .box{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Adding style to H2 font */
+.bluebg .box h2{
+    color: white;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+/* Adding style to BOTH buttons */
+.bluebg .box button{
+    cursor: pointer;
+    padding: 10px 20px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    border-style: none;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: ease-out 0.3s;
+    position: relative;
+    border: 2px solid white;
+}
+
+.bluebg .box button:hover{
+    background: transparent;
+    border: 2px solid white;
+    color: #fff;
+}
+
+/*=============================== MAKING THE SLIDER ===============================*/
+
+/* Adding style to Silder */
+.formBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 45px rgb(0,0,0,0.15);
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.formBx.active{
+    left: 50%;
+}
+
+/* Styling the form for both SIGN IN and SIGN UP */
+.formBx .form{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    transition: 0.5s;
+}
+
+.formBx .form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formBx .form form i {
+    font-size: 4rem;
+    font-weight: 500;
+    margin-left: 0;
+    padding-left: 0;
+    left: 0;
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+}
+
+.formBx .form form .signinimage {
+    color: #23a6d5;
+}
+
+/* Adding style to the TEXT of form */
+.formBx .form form h3{
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Styling the TEXTBOXES|INPUT BOXES */
+.formBx .form form input{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px;
+    outline: none;
+    font-size: 14px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+
+/*=============================== SIGN IN SECTION ===============================*/
+
+
+.formBx.active .signinForm{
+    left: -100%;
+    transition-delay: 0%;
+}
+
+.formBx .signinForm{
+    transition-delay: 0.2s;
+}
+
+.formBx .form form input[type="submit"]{
+    background: #5bbbdd;
+    border: none;
+    color: white;
+    max-width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.formBx .form form input[type="submit"]:hover{
+    letter-spacing: 2px;
+}
+
+.formBx .form form .forgot{
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+.formBx .form form .forgot:hover{
+    color: #348dad;
+}
+
+/*=============================== SIGN UP SECTION ===============================*/
+
+
+.formBx .signupForm{
+    left: 100%;
+    transition-delay: 0s;
+}
+
+.formBx.active .signupForm{
+    left: 0%;
+    transition-delay: 0.25s;
+}
+
+.formBx.active .signupForm input[type="submit"]{
+    background: #f15b9a;
+    border: none;
+    color: white;
+    max-width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+body.active{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: change 10s ease-in-out infinite;
+    transition-delay: 5s;
+}
+
+/*======================================= ICONS =======================================*/
+
+img{
+    width: 3.9rem;
+    height: 3.2rem;
+    position: relative;
+    margin-bottom: 0px;
+    left: 0;
+}
+
+.signupimage{
+    margin-bottom: 3px;
+    color: #e73c7e;
+}
+
+
+
+
+
+/*================================================ END OF CODE =================================================*/
